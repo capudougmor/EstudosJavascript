@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numeros = [3, 4, 5, 9, 23, 99]
+        console.log(numeros[3])
+        console.log(numeros[5])
+        console.log(numeros.length)
+        var numeroRetornado = numeros.pop()
+        console.log(numeroRetornado)
+        console.log(numeros.slice(0, 4))
+        console.log(numeros.slice(3))
+
+        var usuario = [
+            'Douglas',
+            35,
+            'Guarda mor',
+            'programador'
+        ]
+
+        console.log(usuario)
+        usuario.join(' ')
+        console.log(usuario)
+
+        usuario.push('MG')
+        console.log(usuario)
+        
+        console.log(usuario.includes('Guarda mor'))
+        console.log(usuario.indexOf('MG'))
+
+        var arr1 = [1, 4, 7]
+        var arr2 = ['Programador', 'a', 'bordo']
+
+        var resultado = arr1.concat(arr2)
+
+        console.log(resultado)
+        // tambem temos o spread
+        console.log([...arr2, ...arr1])
+
+        //desestruturation
+        var [nome, idade, , ocupação] = usuario
+        console.log(nome, idade, ocupação)
+
+
+    </script>
+</body>
+</html>
