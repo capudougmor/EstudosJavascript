@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    for(var counter = 0; counter<10; ++counter) {
+      console.log(counter)
+    }
+
+    let sortNumbers = [2, 5, 45, 51, 19, 14, 22]
+    for(var i = sortNumbers.length - 1; i >= 0; i--) {
+      console.log(`Position ${i} with decrepment ${sortNumbers[i]} `)
+    }
+
+    for(let num of sortNumbers) {
+      console.log(num)
+    }
+
+    for(var i =0; i<=50; i++) {
+      if(i % 3 ===0 && i % 5 ===0 ) {
+        console.log(`${i}  ping pong`)
+      } else if(i % 3 ===0) {
+        console.log(`${i}  ping`)
+      } else if (i % 5 ===0) {
+        console.log(`${i}  pong`)
+      }
+    }
+
+  </script>
+</body>
+</html>
