@@ -16,6 +16,12 @@ function playNote(event) {
     audio.currentTime = 0
     audio.play()
     console.log(audio)
+
+    addPlayingClass(key)
+}
+
+function addPlayingClass(key) {
+    key.classList.add('playing')
 }
 
 function getKeyCode(event) {
@@ -31,8 +37,13 @@ function getKeyCode(event) {
     return keyCode
 }
 
+function removePlayingClass(event) {
+    event.target.classList.remove('playing')
+}
+
 keys.forEach((key) => {
    key.addEventListener('click', playNote)
+   key.addEventListener('transitionend', removePlayingClass)
 })
 
 window.addEventListener("keydown", playNote) 
