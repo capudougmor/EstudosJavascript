@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function soma(numeros) {
+      var total = 0
+      for(num of numeros) {
+        total += num
+      }
+      return total
+    }
+
+    var numeros = [2, 5, 10, 21, 55, 18, 6]
+    var resultado = soma(numeros)
+    console.log(`O total é: ${resultado} `)
+
+    // function writeAddress(rua, numero, bairro, ...complemento) {
+    //   console.log(rua)
+    //   console.log(numero)
+    //   console.log(bairro)
+    //   for(item of complemento) {
+    //     console.log(item)
+    //   }
+    // }
+
+    // writeAddress('rua Oliveira Lima', 253, 'Bairro Pampulha', 'Casa da Frente', 'CEP:38408-650' )
+
+    //funcao autoexecutavel
+    // (function(nome) {
+    //   console.log(nome)       
+    // }('Douglas'))
+
+    //funcao anonima
+    let subtraiTresNumeros = function(a, b, c){
+      return a - b - c
+    }
+
+    console.log(subtraiTresNumeros(30, 10, 10))
+
+    //call back
+    function somaCallBack(a, b, fnCallBack) {
+      return fnCallBack(a + b)
+    }
+    var multiplica = function(total){
+      return total * 2
+    }
+    console.log(somaCallBack(10, 3, multiplica))
+
+    console.log(somaCallBack(5, 2, function(total) {
+      return total + 20
+    }))
+
+    console.log(somaCallBack(23, 11, function(total) {
+      return total / 2
+    }))
+
+    
+
+    console.log()
+  </script>
+</body>
+</html>
