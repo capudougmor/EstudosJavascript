@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <script>
+        // var usuario = {
+        //     nome: {
+        //         primeiro: 'Douglas',
+        //         sobrenome: 'Mendes'
+        //     }
+        // }
+
+        // var usuario2 = {
+        //     nome: 'Ana Clara',
+        //     idade: 40
+        // }
+
+        // var { nome: { primeiro } } = usuario
+        // console.log(primeiro)
+
+        // var { nome: { sobrenome = 'Assunção' } } = usuario
+        // console.log(sobrenome)
+
+        // var { nome = 'cintia'} = usuario2
+        // console.log(nome)
+
+        // function printUser({nome, idade, sexo, pais = 'Brasil'}) {
+        //     console.log(nome)
+        //     console.log(idade)   
+        //     console.log(sexo)   
+        //     console.log(pais)
+        // }
+
+        var functionUser = {
+            nome: 'Douglas',
+            idade: 35,
+            sexo: 'm',
+            pais: 'Portugal'
+        }
+
+        // printUser(functionUser)
+        // console.log(Object.keys(functionUser))
+        // console.log(Object.values(functionUser))
+
+        var props = Object.keys(functionUser)
+        var values = Object.values(functionUser)
+
+        for(let prop of props) {
+            console.log(prop)
+        }
+
+        for(let field of values) {
+            console.log(field)
+        }
+
+        for(let prop2 in functionUser) {                
+            console.log(prop2, functionUser[prop2])
+        }
+
+        console.log()
+    </script>
+</body>
+</html>
