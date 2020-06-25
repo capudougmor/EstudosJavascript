@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow function</title>
+</head>
+<body>
+  <script>
+
+    var soma = (a, b) => {
+      return a + b
+    }
+
+    var subtrair = (a, b) => a - b
+
+    var dividir = (a, b) => (
+      a / b
+    )
+
+    var returnUser = () => (
+      {
+        nome: 'Douglas',
+        idade: 35
+      }
+    )
+
+    var returnCity = city => (
+      {
+        nome: 'Douglas',
+        city
+      }
+    )
+
+    console.log(returnUser())
+    console.log(returnCity('Guarda mor'))
+
+
+  </script>
+</body>
+</html>
