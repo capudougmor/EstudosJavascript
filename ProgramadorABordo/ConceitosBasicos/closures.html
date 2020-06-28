@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closures</title>
+</head>
+<body>
+  <script>
+
+    function imprimeNomeCompleto(nome) {
+      return function(){
+        console.log(nome, 'Mendes')
+      }
+    }
+    
+    function iniciliza() {
+      let nome =  'Douglas'
+      setTimeout(imprimeNomeCompleto(nome), 2000)
+    }
+
+    iniciliza()
+
+  </script>
+</body>
+</html>
