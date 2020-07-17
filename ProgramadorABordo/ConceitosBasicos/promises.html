@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Promises</title>
+</head>
+<body>
+   <script>
+      // pendente
+      // realizada
+      // rejeitada
+      // estabelecida
+      console.log('')
+      
+      const data = 'coisa'
+      
+      function jaRealizada() {
+         return Promise.resolve(data)
+      }
+
+      jaRealizada().then((data) => {
+         console.log('Promise resolvida', data)
+      })
+
+      function promiseTrabalhada() {
+         return new Promise(function(resolve, reject) {
+            resolve('Ola trabalhada')
+         })
+      }
+
+      promiseTrabalhada().then((message) => {
+         console.log(message)
+      })
+
+
+
+
+
+
+
+
+
+   </script>
+</body>
+</html>
