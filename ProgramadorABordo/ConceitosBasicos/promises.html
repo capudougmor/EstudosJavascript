@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Promises</title>
 </head>
+
 <body>
    <script>
       // pendente
@@ -12,11 +14,11 @@
       // rejeitada
       // estabelecida
       console.log('')
-      
-      const data = 'coisa'
-      
+
+      const cep = '01001000'
+
       function jaRealizada() {
-         return Promise.resolve(data)
+         return Promise.resolve(cep)
       }
 
       jaRealizada().then((data) => {
@@ -24,7 +26,7 @@
       })
 
       function promiseTrabalhada() {
-         return new Promise(function(resolve, reject) {
+         return new Promise(function (resolve, reject) {
             resolve('Ola trabalhada')
          })
       }
@@ -33,14 +35,42 @@
          console.log(message)
       })
 
+      function promiseTrabalhada2() {
+         return new Promise(function (resolve, reject) {
+            setTimeout(() => {
+               resolve('Hello world')
+            }, 2000)
+         })
+      }
 
+      promiseTrabalhada2().then((message) => {
+         console.log(message)
+      })
 
+      // http://viacep.com.br/ws/01001000/json/
+      jaRealizada()
+         .then((cep) => {
+            return fetch('http://viacep.com.br/ws/' + cep + '/json/')
+         })
+         .then((data) => {
+            return data.json()
+         })
+         .then((endereco) => {
+            return console.log(endereco)
+         })
 
-
-
+      https://swapi.dev/api/people/1/
+      fetch('https://swapi.dev/api/people/1/')
+         .then((response) => {
+            return response.json()
+         })
+         .then((data) => {
+            return console.log(data.name)
+         })
 
 
 
    </script>
 </body>
+
 </html>
