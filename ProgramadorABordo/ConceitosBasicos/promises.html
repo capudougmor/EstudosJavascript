@@ -48,18 +48,34 @@
       })
 
       // http://viacep.com.br/ws/01001000/json/
-      jaRealizada()
-         .then((cep) => {
+      function pegaCEP(cep) {
             return fetch('http://viacep.com.br/ws/' + cep + '/json/')
-         })
-         .then((data) => {
-            return data.json()
-         })
-         .then((endereco) => {
-            return console.log(endereco)
-         })
+         }
 
-      https://swapi.dev/api/people/1/
+      function extrairEndereco(data) {
+            return data.json()
+         }
+
+      function imprimeEndereco(endereco) {
+            return console.log(endereco)
+         }
+
+      function tratarErro(err) {
+         console.log('Aconteceu um erro!', err)
+      }
+
+      function always() {
+         console.log('Sempre executada!')
+      }
+
+      jaRealizada()
+         .then(pegaCEP)
+         .then(extrairEndereco)
+         .then(imprimeEndereco)
+         .catch(tratarErro)
+         .finally(always)
+
+      // https://swapi.dev/api/people/1/
       fetch('https://swapi.dev/api/people/1/')
          .then((response) => {
             return response.json()
