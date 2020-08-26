@@ -6,31 +6,30 @@
   <title>Conversor de moedas</title>
 </head>
 <body>
-  <form action="">
+  <form id='formMoeda' action="">
     <label>
       Moeda Origem
-      <input type="text" name="valorOrigen">
+      <input id='valorOrigem' type="text" name="valorOrigen" value='1'>
     </label>
-    <select id="moedaTipoDestino" name="moedaTipoOrigem" >
+    <select id="moedaTipoOrigem" name="moedaTipoOrigem" >
       <option value="EUR">Euro</option>
       <option value="LIB">Libra</option>
-      <option value="BRL">Real</option>
+      <option value="BRL" selected>Real</option>
       <option value="USD">Dolar</option>
     </select>
     <br>
     <label>
       Moeda Destino
-      <input type="text" name="valorDestino">
+      <input id='valorDestino' type="text" name="valorDestino">
     </label>
     <select id="moedaTipoDestino" name="moedaTipoDestino" >
       <option value="EUR">Euro</option>
       <option value="LIB">Libra</option>
       <option value="BRL">Real</option>
-      <option value="USD">Dolar</option>
+      <option value="USD" selected>Dolar</option>
     </select>
   </form>
 
-  <p id="resultado"></p>
 
   <script src="moeda.js"></script>
 </body>
