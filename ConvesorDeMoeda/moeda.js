@@ -10,35 +10,30 @@ const moedas = {
   USD: dolar
 }
 
-function calculaMoeda(valor, moedaEntrada, moedaSaida) {  
-  return valor / moedas[moedaEntrada] * moedas[moedaSaida] 
+function calculaMoeda(valor, moedaEntrada, moedaSaida) {
+  return valor / moedas[moedaEntrada] * moedas[moedaSaida]
 }
 
-function preecherDestino() {
+function preecherDestino({ valorOrigem, moedaTipoOrigem, moedaTipoDestino }) {
   document.querySelector('#valorDestino').value = calculaMoeda(
-    moedaOrigem, moedaTipoOrigem, moedaTipoDestino
+    valorOrigem, moedaTipoOrigem, moedaTipoDestino
   )
 }
 
 const formMoeda = document.getElementById('formMoeda')
 
-let moedaOrigem = document.querySelector('#valorOrigem').value
-let moedaDestino = document.querySelector('#valorDestino').value
-let moedaTipoOrigem = document.querySelector('#moedaTipoOrigem').value
-let moedaTipoDestino = document.querySelector('#moedaTipoDestino').value
+const formData = {
+  valorOrigem: formMoeda.valorOrigem.value,
+  valorDestino: formMoeda.valorDestino.value,
+  moedaTipoOrigem: formMoeda.moedaTipoOrigem.value,
+  moedaTipoDestino: formMoeda.moedaTipoDestino.value,
+}
+
 
 formMoeda.addEventListener('input', (e) => {
-  if(e.target.name === 'valorOrigem') {
-    moedaOrigem = e.target.value
-  } else if(e.target.name === 'valorDestino') {
-    valorDestino = e.target.value
-  } else if(e.target.name === 'moedaTipoOrigem') {
-    moedaTipoOrigem = e.target.value
-  } else if(e.target.name === 'moedaTipoDestino') {
-    moedaTipoDestino = e.target.value
-  }
+  formData[e.target.name] = e.target.value
 
-  preecherDestino()  
+  preecherDestino(formData)
 })
 
-preecherDestino()
+  preecherDestino(formData)
